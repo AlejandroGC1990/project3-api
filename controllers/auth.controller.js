@@ -8,7 +8,7 @@ module.exports.create = (req, res, next) => {
   if (req.file) {
     newUser.image = req.file.path
   }
-
+//test
   User.create(req.body)
     .then(user => {
       res.status(201).json(user)
@@ -19,6 +19,8 @@ module.exports.create = (req, res, next) => {
   module.exports.login = (req, res, next) => {
     // Take password and email to validate
     const { email, password } = req.body
+
+    console.log('entro')
   
     const throwException = () => next(createError(401, 'Incorrect credentials'))
   
